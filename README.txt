@@ -1,0 +1,1 @@
+Run this java project with Run Configurations and put your password of your local Mysql Server as a Parameter.
