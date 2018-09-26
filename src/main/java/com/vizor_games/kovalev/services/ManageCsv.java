@@ -12,6 +12,7 @@ import com.vizor_games.kovalev.MatchResults;
 import com.vizor_games.kovalev.Player;
 import com.vizor_games.kovalev.PlayerAssistsGoals;
 import com.vizor_games.kovalev.PlayerCard;
+import com.vizor_games.kovalev.Proceeds;
 
 /*
  * This class manages to fetch CSV file data into lists
@@ -24,6 +25,7 @@ public class ManageCsv {
 	List<MatchResults> lstMatchResults = null;
 	List<PlayerAssistsGoals> lstPlayerAssistsGoals = null;
 	List<PlayerCard> lstPlayerCard = null;
+	List<Proceeds> proceeds = null;
 	
 	
 	public List<Country> getCountryList() {
@@ -45,6 +47,10 @@ public class ManageCsv {
 	public List<PlayerCard> getPlayerCards(){
 		return lstPlayerCard;
 	}
+	
+	public List<Proceeds> getProceeds(){
+		return proceeds;
+	}
 	public ManageCsv() {
 		// TODO Auto-generated constructor stub
 		lstCountry = new ArrayList<Country>();
@@ -52,6 +58,8 @@ public class ManageCsv {
 		lstMatchResults = new ArrayList<MatchResults>();
 		lstPlayerAssistsGoals = new ArrayList<PlayerAssistsGoals>();
 		lstPlayerCard = new ArrayList<PlayerCard>();
+		proceeds = new ArrayList<Proceeds>();
+		
 	}
 	public String trimForList(String str) {
 		String result=str;
