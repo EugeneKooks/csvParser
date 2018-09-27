@@ -13,12 +13,11 @@ public class Main {
 			ManageCsv m = new ManageCsv();
 			try {
 				// reading all csv files into lists
-				m.ReadProceedsCsvIos(".\\files\\Proceeds\\com_vizorapps_mahjong_partners_daily.csv");
-				m.ReadMatchResultsCsv(".\\\\files\\Match_results.csv");				
+				m.ReadProceedsCsviOS(".\\files\\Proceeds\\com_vizorapps_mahjong_partners_daily.csv");
+				m.ReadProceedsCsvAndroid(".\\files\\Proceeds\\id1098189387_partners_daily_report_2018.csv");
 				// using all lists for inserts
 				DAOImpl dao = new DAOImpl("root");
 				dao.insertProceeds(m.getProceeds());
-				dao.insertMatchResults(m.getLstMatchResults());				
 				System.out.println("It's OK");
 			} catch (SQLException e) {
 				System.out.println("Error in CSV handling/inserting");

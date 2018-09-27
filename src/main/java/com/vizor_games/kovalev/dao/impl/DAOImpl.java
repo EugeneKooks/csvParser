@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-
-import com.vizor_games.kovalev.MatchResults;
 import com.vizor_games.kovalev.Proceeds;
 
 /*
@@ -64,30 +62,5 @@ public class DAOImpl {
 			return false;
 		}
 		return true;
-	}
-	public boolean insertMatchResults(List<MatchResults> lst) {
-		try {
-			String query = "insert into match_results (match_id, date_of_match, start_time_of_match, team1, team2, team1_score, team2_score, stadium_name, host_city) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement pr3 = con.prepareStatement(query);
-			for(MatchResults r : lst) {
-				pr3.setDouble(1, r.getMatchId());
-				pr3.setString(2, clean(r.getDateOfMatch()));
-				pr3.setString(3, clean(r.getStartTiemOfMatch()));
-				pr3.setString(4, clean(r.getTeam1()));
-				pr3.setString(5, clean(r.getTeam2()));
-				pr3.setDouble(6, r.getTeam1Score());
-				pr3.setDouble(7, r.getTeam2Score());
-				pr3.setString(8, clean(r.getStadiumName()));
-				pr3.setString(9, clean(r.getHostCity()));
-				pr3.addBatch();
-			}
-			pr3.executeBatch();
-			pr3.closeOnCompletion();
-			System.out.println("All records inserted into match_results table");
-		}catch(SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
+	}	
 }
