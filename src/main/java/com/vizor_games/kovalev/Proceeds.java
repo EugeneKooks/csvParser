@@ -13,7 +13,7 @@ public class Proceeds {
 	String media;
 	String campaign;
 	String platform;
-	Double installs;
+	String installs;
 	String cost;	
 	
 public Proceeds() {
@@ -26,10 +26,9 @@ public Proceeds() {
 			this.setMedia(cellIterator.next().getStringCellValue());
 			this.setCampaign(cellIterator.next().getStringCellValue());
 			this.setPlatform(cellIterator.next().getStringCellValue());
-			this.setInstalls(cellIterator.next().getNumericCellValue());
+			this.setInstalls(cellIterator.next().getStringCellValue());
 			this.setCost(cellIterator.next().getStringCellValue());
-	}
-	
+	}		
 	public String getName() {
 		return name;
 	}
@@ -60,10 +59,10 @@ public Proceeds() {
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-	public Double getInstalls() {
+	public String getInstalls() {
 		return installs;
 	}
-	public void setInstalls(Double installs) {
+	public void setInstalls(String installs) {
 		this.installs = installs;
 	}
 	public String getCost() {
