@@ -1,4 +1,4 @@
-package com.vizor_games.kovalev;
+package com.games.kuks;
 
 import java.util.Iterator;
 import org.apache.poi.ss.usermodel.Cell;

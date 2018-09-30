@@ -1,4 +1,4 @@
-package com.vizor_games.kovalev.dao.impl;
+package com.games.kuks.dao.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import com.vizor_games.kovalev.Proceeds;
-import com.vizor_games.kovalev.Revenue;
+import com.games.kuks.Proceeds;
+import com.games.kuks.Revenue;
 
 /*
  * This class does all db related operations

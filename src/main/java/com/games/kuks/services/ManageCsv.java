@@ -1,4 +1,4 @@
-package com.vizor_games.kovalev.services;
+package com.games.kuks.services;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,8 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.vizor_games.kovalev.Proceeds;
-import com.vizor_games.kovalev.Revenue;
+import com.games.kuks.Proceeds;
+import com.games.kuks.Revenue;
 
 /*
  * This class manages to fetch CSV file data into lists

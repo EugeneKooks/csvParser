@@ -1,8 +1,8 @@
 package com;
 
 import java.sql.SQLException;
-import com.vizor_games.kovalev.services.ManageCsv;
-import com.vizor_games.kovalev.dao.impl.DAOImpl;
+import com.games.kuks.services.ManageCsv;
+import com.games.kuks.dao.impl.DAOImpl;
 
 
 
