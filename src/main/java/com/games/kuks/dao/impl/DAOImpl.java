@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import com.vizor_games.kovalev.Proceeds;
+import com.vizor_games.kovalev.Revenue;
 
 /*
  * This class does all db related operations
@@ -56,6 +57,34 @@ public class DAOImpl {
 			pr1.executeBatch();
 			pr1.closeOnCompletion();
 			System.out.println("All records inserted into proceeds table");
+		}catch(SQLException e) {
+			System.out.println(e.getErrorCode()+"---"+e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean insertRevenue(List<Revenue> lst) {
+		try {	
+			String query="insert into revenue (name, installTime, eventTime, eventRevenueUSD, mediaSource, campaign, countryCode, customerUserID, platform) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";			
+
+			PreparedStatement pr1 = con.prepareStatement(query);
+			for(Revenue c : lst) {
+				pr1.setString(1,clean(c.getName()));
+				pr1.setString(2,clean(c.getInstallTime()));
+				pr1.setString(3,clean(c.getEventTime()));
+				pr1.setString(4,clean(c.getEventRevenueUSD()));
+				pr1.setString(5,clean(c.getMediaSource()));
+				pr1.setString(6,clean(c.getCampaign()));
+				pr1.setString(7,clean(c.getCountryCode()));
+				pr1.setString(8,clean(c.getCustomerUserID()));
+				pr1.setString(9,clean(c.getPlatform()));
+				pr1.addBatch();
+			}
+			pr1.executeBatch();
+			pr1.closeOnCompletion();
+			System.out.println("All records inserted into revenue table");
 		}catch(SQLException e) {
 			System.out.println(e.getErrorCode()+"---"+e.getMessage());
 			e.printStackTrace();

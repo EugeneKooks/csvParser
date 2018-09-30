@@ -1,16 +1,14 @@
 package com.vizor_games.kovalev;
 
-import java.util.Date;
 import java.util.Iterator;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 
 public class Revenue {
 	String name;
-	Date installTime;
-	Date eventTime;
-	Double eventRevenueUSD;	
+	String installTime;
+	String eventTime;
+	String eventRevenueUSD;	
 	String mediaSource;	
 	String campaign;
 	String countryCode;
@@ -23,9 +21,9 @@ public Revenue() {
 	public Revenue(XSSFRow row){
 			Iterator<Cell> cellIterator=row.iterator();
 			this.setName(cellIterator.next().getStringCellValue());
-			this.setInstallTime(cellIterator.next().getDateCellValue());
-			this.setEventTime(cellIterator.next().getDateCellValue());
-			this.setEventRevenueUSD(cellIterator.next().getNumericCellValue());
+			this.setInstallTime(cellIterator.next().getStringCellValue());
+			this.setEventTime(cellIterator.next().getStringCellValue());
+			this.setEventRevenueUSD(cellIterator.next().getStringCellValue());
 			this.setMediaSource(cellIterator.next().getStringCellValue());
 			this.setCampaign(cellIterator.next().getStringCellValue());
 			this.setCountryCode(cellIterator.next().getStringCellValue());
@@ -38,22 +36,22 @@ public Revenue() {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getInstallTime() {
+	public String getInstallTime() {
 		return installTime;
 	}
-	public void setInstallTime(Date installTime) {
+	public void setInstallTime(String installTime) {
 		this.installTime = installTime;
 	}
-	public Date getEventTime() {
+	public String getEventTime() {
 		return eventTime;
 	}
-	public void setEventTime(Date eventTime) {
+	public void setEventTime(String eventTime) {
 		this.eventTime = eventTime;
 	}
-	public Double getEventRevenueUSD() {
+	public String getEventRevenueUSD() {
 		return eventRevenueUSD;
 	}
-	public void setEventRevenueUSD(Double eventRevenueUSD) {
+	public void setEventRevenueUSD(String eventRevenueUSD) {
 		this.eventRevenueUSD = eventRevenueUSD;
 	}
 	public String getMediaSource() {
